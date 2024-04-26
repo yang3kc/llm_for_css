@@ -10,9 +10,9 @@ The following topics are covered:
 
 1. [Handling API keys properly](#api-key)
 1. [Writing a simple Python script to query the API](#simple-python-script-to-query-the-api)
-1. Using JSON mode to obtain structured output and parse (validate) the output
-1. Using async programming to accelerate the querying process
-1. Using the batch API to process large amounts of data with reduced cost
+1. [Using JSON mode to obtain structured output and parse (validate) the output](/structured_output)
+1. [Using async programming to accelerate the querying process](/async_programming)
+1. [Using the batch API to process large amounts of data with reduced cost](/batch_processing)
 
 # API key
 
