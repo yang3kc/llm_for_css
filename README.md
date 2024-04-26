@@ -101,3 +101,12 @@ See [structured_output](/structured_output) for details.
 For issue 2, there are two options:
 1. If you need the results immediately, you can consider using the async programming to accelerate the querying process. See [async_programming](/async_programming) for details.
 1. If you can wait, you can use the batch API to process large amounts of data with reduced cost. See [batch_processing](/batch_processing) for details.
+
+# Roadmap
+
+I'm also considering writing on the following topics:
+1. Querying other API providers. They might include closed-source model providers like Google and Anthropic and open-source model providers.
+1. Running LLMs locally.
+
+If you have questions or suggestions, please open issues.
+Pull requests are also welcome!
