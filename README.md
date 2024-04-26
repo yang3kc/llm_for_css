@@ -102,6 +102,12 @@ For issue 2, there are two options:
 1. If you need the results immediately, you can consider using the async programming to accelerate the querying process. See [async_programming](/async_programming) for details.
 1. If you can wait, you can use the batch API to process large amounts of data with reduced cost. See [batch_processing](/batch_processing) for details.
 
+# Dependency
+
+To run the example scripts in this repo, you need the following dependencies:
+- openai>=1.23
+- pydantic>=2.7
+
 # Roadmap
 
 I'm also considering writing on the following topics:
