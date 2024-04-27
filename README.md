@@ -16,7 +16,7 @@ The following topics are covered:
 
 # API key
 
-Fist rule of working with API providers: **Never** put your API key in your script or Jupyter notebook.
+First rule of working with API providers: **Never** put your API key in your script or Jupyter notebook.
 In other words, you should **not** start your script with the following:
 
 ```python
@@ -25,7 +25,7 @@ from openai import OpenAI
 client = OpenAI(api_key="<your OpenAI API key>")
 ```
 
-Instead, consider adding the API key as an environment variable called `OPENAI_API_KEY`, which can be achieved with the following shall command:
+Instead, consider adding the API key as an environment variable called `OPENAI_API_KEY`, which can be achieved with the following shell command:
 
 ```bash
 export OPENAI_API_KEY="<your OpenAI API key>"
