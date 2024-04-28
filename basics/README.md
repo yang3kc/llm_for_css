@@ -1,6 +1,9 @@
 # Introduction
 
 Let's start with a simple example to query the OpenAI API.
+All the other more complex examples will be based on this one.
+
+# Example on sentiment analysis
 
 Considering the following sentiment analysis tasks.
 We have some text messages and we want to know if it is positive or negative.
@@ -40,17 +43,21 @@ Sentiment Score: 0.8
 Explanation: The text message "The service here is very good!" conveys a positive sentiment. The use of the word "good" and the intensifier "very" both indicate a high level of satisfaction with the service. Overall, the message expresses a positive sentiment towards the service, hence the score of 0.8.
 ```
 
-This is pretty good!
+# Next steps
 
-But in computational social science research, we typically have thousands of text messages to process.
+The script above is very simple and effective.
+But in computational social science research, we often have tens of thousands of text messages to process.
 And using the simple script above becomes difficult for a couple of reasons:
 1. The output is in plain text.
 Although it's easy for human to extract the key information, dealing with it using programs is difficult.
 2. Running the script to process your text messages one by one can be slow.
 
-To deal with issue 1, we can leverage the JSON mode of OpenAI's API to force the output format.
+To deal with issue 1, we can leverage the JSON mode of OpenAI's API to specify the output format.
 See [structured_output](/structured_output) for details.
 
 For issue 2, there are two options:
 1. If you need the results immediately, you can consider using the async programming to accelerate the querying process. See [async_programming](/async_programming) for details.
-1. If you can wait, you can use the batch API to process large amounts of data with reduced cost. See [batch_processing](/batch_processing) for details.
+1. If you are not in a rush, you can use the batch API to process large amounts of data with reduced cost. See [batch_processing](/batch_processing) for details.
+
+Personally, I prefer the second option because it can significantly reduce the cost and doesn't need to deal with the async programming.
+But only OpenAI offers batch API right now, while async programming works well with other providers too.
