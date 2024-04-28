@@ -118,5 +118,5 @@ I won't go into the details, but below are some tools that are worth checking ou
 - [DSPy](https://dspy-docs.vercel.app/): It's a more advanced prompt engineering tool that optimizes the prompt automatically. I think it got a lot of potential, but can be hard to learn.
 
 Although these fancy tools can be very powerful and useful, they sometimes hide the details of the prompts.
-I do believe that it's import to read the prompt yourself.
-After all, using LLMs is done through a conversation between you and the model.
+I do believe that it's important to read the prompt yourself.
+After all, using LLMs is nothing but a conversation.
