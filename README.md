@@ -8,7 +8,7 @@ I'll focus on OpenAI's API.
 But many of the tips and tricks are applicable to other providers as well.
 The following topics are covered:
 
-1. [Handling API keys properly](#api-key)
+1. [Handling API keys properly](#api-key-please-read-this-first)
 1. [Writing a simple Python script to query the API](/basics)
 1. [Using JSON mode to obtain structured output and parse (validate) the output](/structured_output)
 1. [Using async programming to accelerate the querying process](/async_programming)
