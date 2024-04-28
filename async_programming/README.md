@@ -11,23 +11,21 @@ If you have a large number of text messages to process, querying the API for the
 Luckily, OpenAI allows sending multiple queries simultaneously to the API (async programming).
 Note that different users might have different [rate limits](https://platform.openai.com/docs/guides/rate-limits/usage-tiers).
 For instance, `Tier 1` users can send up to 3,500 queries per minute to the `gpt-3.5-turbo` model.
-
 This feature means that while you are waiting for the response, you can process other text messages, greatly saving your time.
+
 Here is my own experience.
 I created a [tool](https://github.com/yang3kc/daily_arxiv_digest) to filter the new papers on arXiv everyday to save my time.
-It runs the abstracts of new papers through ChatGPT and have it classify them.
+It runs the abstracts of new papers through ChatGPT and has it classify them.
 The old implementation does this paper by paper in order, taking a few minutes to finish about 100 papers.
-
 Although this is not slow at all, I decided to give async programming a try.
-With the new implementation, it only takes a few seconds to process all the papers now, over x50 improvement!
-
+With the new implementation, it only takes a few seconds to process all the papers now, over x50 faster!
 
 # Warning
 
 Async programming is complicated, and you might run into a sorts of issues if you don't know what you are doing.
 My suggestion is that you should only consider this approach when you absolutely need it.
-This means that you can just use a for loop to process the text messages if you don't have that many to process.
-If you are not in a rush, you should also consider the new [batch API](/batch_processing), which much easier to handle and cheaper.
+If you don't have that many text messages to process, you can just use a for loop.
+If you are not in a rush, you should also consider the new [batch API](/batch_processing), which is much easier to handle and costs only half the price.
 
 # Async programming
 
@@ -78,7 +76,7 @@ def process_text_message(text_message):
     return result
 ```
 
-Running it is straight forward:
+Running it with a for loop is straight forward:
 
 ```python
 sync_results = []
