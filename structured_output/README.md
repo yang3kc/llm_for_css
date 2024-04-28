@@ -59,10 +59,13 @@ which is exactly what we wanted.
 # Output validation
 
 OpenAI claims that the JSON mode only guarantees that the output is valid JSON, but not the schema.
-Therefore, we need to further validate the output.
-I suggest using [pydantic](https://docs.pydantic.dev/latest) to validate the output.
+I have done tens of thousands of API calls to both 3.5 and 4 series models, and for most of the cases, ChatGPT returned valid JSON in the specified schema.
+However, invalid outputs are still possible, and it's why we need to further validate the output.
 
-In this case, we can define a Pydantic model to validate the output:
+You could do so by using the `json` module in Python to parse the output and check each field in the schema yourself.
+But I suggest using [pydantic](https://docs.pydantic.dev/latest) for this purpose.
+
+In the sentiment analysis, we can define a Pydantic model to validate the output:
 ```python
 from pydantic import BaseModel, Field
 
@@ -89,7 +92,9 @@ The situations might include:
 1. Score is not in the range of -1 to 1.
 1. The output is not in the schema defined in the prompt.
 
-You can print the result as a dictionary:
+In such cases, you could try to query the API again and will likely get a valid output.
+
+For valid output, you can print the result as a dictionary:
 ```python
 senti_score_dict = senti_score_result.model_dump()
 print(senti_score_dict)
@@ -101,4 +106,17 @@ You can also obtain the JSON string if you want to store it in a file:
 senti_score_json = senti_score_result.model_dump_json()
 ```
 
-The whole script can be found in [json_mode.py](/json_mode.py)
+The whole script can be found in [json_mode.py](/structured_output/json_mode.py)
+
+# Next steps
+
+In this tutorial, I try to keep things simple and avoid using advanced prompt engineering tools.
+But they can be handy if the simple solution here doesn't fit your use case.
+I won't go into the details, but below are some tools that are worth checking out:
+
+- [instructor](https://python.useinstructor.com/): It patches OpenAI's python package and makes it easier to specify and extract complex data structures from OpenAI's API responses.
+- [DSPy](https://dspy-docs.vercel.app/): It's a more advanced prompt engineering tool that optimizes the prompt automatically. I think it got a lot of potential, but can be hard to learn.
+
+Although these fancy tools can be very powerful and useful, they sometimes hide the details of the prompts.
+I do believe that it's import to read the prompt yourself.
+After all, using LLMs is done through a conversation between you and the model.
