@@ -52,6 +52,8 @@ To run the example scripts in this repo, you need the following dependencies:
 - `openai>=1.23`
 - `pydantic>=2.7`
 
+I only tested the code using `python 3.10`.
+
 # Roadmap
 
 I'm also considering writing on the following topics:
