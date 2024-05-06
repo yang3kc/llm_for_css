@@ -143,7 +143,8 @@ The improvement will be more significant if you have more text messages to proce
 
 The implementation above has some issues.
 If you have, say, 1,000 messages to process, `asyncio.gather` will try to fire up all of them simultaneously, potentially leading to memory overflows.
-In practice, we might want to set a maximum number of concurrent requests to the API.
+Doing so could also result in rate limit errors since OpenAI has rate limits for the number of requests per minute and number of tokens per minute.
+To avoid hitting these limits, we can set a maximum number of concurrent requests to the API.
 This can be implemented using `asyncio.Semaphore`.
 
 This part can be complicated, so I create a [template script](/async_programming/async_template.py) to help you get started.
