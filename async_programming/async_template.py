@@ -102,7 +102,9 @@ async def async_main():
     async_results = await asyncio.gather(
         # Here we set the max number of concurrent requests to 3
         # For your case, you can set it to bigger values such as 20 or 100 if memory is not an issue
-        *limit_concurrency(tasks, number_of_concurrent_tasks=3)
+        # We will also return the exceptions
+        *limit_concurrency(tasks, number_of_concurrent_tasks=3),
+        return_exceptions=True,
     )
     return async_results
 
@@ -110,4 +112,9 @@ async def async_main():
 async_results = asyncio.run(async_main())
 
 for result in async_results:
-    print(result)
+    # Here we check if the result is an exception
+    # You might need to re-try the failed requests later
+    if isinstance(result, Exception):
+        print(f"Error: {result}")
+    else:
+        print(result)
