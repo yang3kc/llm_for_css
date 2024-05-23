@@ -42,7 +42,7 @@ client = OpenAI()
 
 The `openai` package will automatically use the API key from the environment variable `OPENAI_API_KEY`.
 
-Alternatively, you can consider using the [`python-dotevn`](https://github.com/theskumar/python-dotenv) package to load the API key from the `.env` file.
+Alternatively, you can consider using the [`python-dotenv`](https://github.com/theskumar/python-dotenv) package to load the API key from the `.env` file.
 Remember to add `.env` to your `.gitignore` file to prevent it from being committed.
 
 
