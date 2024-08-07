@@ -20,6 +20,8 @@ Now you can use the same interface to query different models from different prov
 
 ```python
 # First, choose a provider and a model
+import api_factory
+
 provider = "openai"
 model = "gpt-4o"
 
