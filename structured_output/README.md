@@ -61,11 +61,11 @@ which is exactly what we wanted.
 
 # Output validation
 
-OpenAI claims that the JSON mode only guarantees that the output is valid JSON, but not the schema.
-I have done tens of thousands of API calls to both 3.5 and 4 series models, and for most of the cases, ChatGPT returned valid JSON in the specified schema.
-However, invalid outputs are still possible, and it's why we need to further validate the output.
+Even with the JSON model, LLMs can still return invalid outputs, this is why we need to further process and validate the output.
 
-You could do so by using the `json` module in Python to parse the output and check each field in the schema yourself.
+A particular useful tool I found is [`json_repair`](https://github.com/mangiucugna/json_repair), which can repair invalid JSON strings.
+
+With a valid JSON string, you could do so by using the `json` module in Python to parse the output and check each field in the schema yourself.
 But I suggest using [pydantic](https://docs.pydantic.dev/latest) for this purpose.
 
 In the sentiment analysis, we can define a Pydantic model to validate the output:
