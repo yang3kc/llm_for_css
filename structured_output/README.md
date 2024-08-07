@@ -4,7 +4,10 @@ Here, we introduce how to get structured output from OpenAI's API, which is extr
 
 # JSON mode
 
-OpenAI supports [JSON mode](https://platform.openai.com/docs/guides/text-generation/json-mode) for its API, which would produce structured output that's easy for programs to parse.
+Many LLMs providers support JSON mode, which would produce structured output that's easy for programs to parse.
+Here, we will show how to use [JSON mode](https://platform.openai.com/docs/guides/text-generation/json-mode) for OpenAI's API.
+
+**Note:** OpenAI recently announced a new ["structured output" feature](https://openai.com/index/introducing-structured-outputs-in-the-api) that can further guarantee the output is in the JSON format.
 
 Let's modify our basic script for sentiment analysis and demonstrate the use of JSON mode.
 
