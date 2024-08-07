@@ -13,6 +13,7 @@ The following topics are covered:
 1. [Using JSON mode to obtain structured output and parse (validate) the output](/structured_output)
 1. [Using async programming to accelerate the querying process](/async_programming)
 1. [Using the batch API to process large amounts of data with reduced cost](/batch_processing)
+1. [Querying different models in a unified interface](/unified_interface)
 
 # API key (please read this first!!!)
 
