@@ -1,5 +1,14 @@
 # Introduction
 
+## Change logs
+**[v2.0 changes]**:
+- Moved from OpenAI's Chat Completions API to Responses API.
+- Using the text format method to define structured output.
+
+If you still need to use the Chat Completions API, check out the [v1.0 branch](https://github.com/yang3kc/llm_for_css/tree/v1.0).
+
+## Background
+
 Using LLMs for computational social science research can be as simple as asking the models questions through a chat box and expecting responses.
 However, things become tricky when you want to use the model to process tens of thousands of text messages programmatically.
 
