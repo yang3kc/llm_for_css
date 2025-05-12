@@ -7,6 +7,7 @@ Author: Kaicheng Yang <yang3kc@gmail.com>
 from openai import AsyncOpenAI
 import asyncio
 from pydantic import BaseModel, Field
+from tqdm.asyncio import tqdm_asyncio
 
 #######################################
 # Prompt-related
@@ -38,29 +39,11 @@ class Sentiment(BaseModel):
 
 
 #######################################
-# Here we define a function to limit the number of concurrent requests
-# The code is borrowed from https://gist.github.com/benfasoli/650a57923ab1951e1cb6355f033cbc8b
-def limit_concurrency(tasks, number_of_concurrent_tasks):
-    """
-    Decorate coroutines to limit concurrency.
-    Enforces a limit on the number of coroutines that can run concurrently in higher level asyncio-compatible concurrency managers like asyncio.gather(coroutines)
-    """
-    semaphore = asyncio.Semaphore(number_of_concurrent_tasks)
-
-    async def with_concurrency_limit(task):
-        async with semaphore:
-            return await task
-
-    return [with_concurrency_limit(task) for task in tasks]
-
-
-#######################################
 # Let's define a function to process the text message
 async_client = AsyncOpenAI()
 
 
 async def process_text_message_async(text_message):
-    print(f"Working on text message: {text_message}")
     response = await async_client.responses.parse(
         model="gpt-4.1-mini",
         temperature=0.0,
@@ -78,24 +61,34 @@ async def process_text_message_async(text_message):
     return result
 
 
-async def async_main():
-    tasks = [process_text_message_async(text_message) for text_message in text_messages]
-    async_results = await asyncio.gather(
-        # Here we set the max number of concurrent requests to 3
-        # For your case, you can set it to bigger values such as 20 or 100 if memory is not an issue
-        # We will also return the exceptions
-        *limit_concurrency(tasks, number_of_concurrent_tasks=3),
-        return_exceptions=True,
-    )
+async def async_main(text_messages, concurrent_tasks=3):
+    # Create tasks properly
+    tasks = []
+    for text_message in text_messages:
+        task = asyncio.create_task(process_text_message_async(text_message))
+        tasks.append(task)
+
+    # Apply concurrency limit
+    semaphore = asyncio.Semaphore(concurrent_tasks)
+
+    async def bounded_task(task):
+        async with semaphore:
+            return await task
+
+    # Create bounded tasks
+    bounded_tasks = [bounded_task(task) for task in tasks]
+
+    # Gather results with tqdm
+    async_results = await tqdm_asyncio.gather(*bounded_tasks)
     return async_results
 
 
-async_results = asyncio.run(async_main())
-
-for result in async_results:
-    # Here we check if the result is an exception
-    # You might need to re-try the failed requests later
-    if isinstance(result, Exception):
-        print(f"Error: {result}")
-    else:
-        print(result)
+if __name__ == "__main__":
+    async_results = asyncio.run(async_main(text_messages, concurrent_tasks=3))
+    for result in async_results:
+        # Here we check if the result is an exception
+        # You might need to re-try the failed requests later
+        if isinstance(result, Exception):
+            print(f"Error: {result}")
+        else:
+            print(result)
