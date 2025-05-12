@@ -1,5 +1,6 @@
 """
-This script provides a template for how to use the OpenAI API in async programming and allows setting the number of concurrent requests.
+This script provides a template for how to use the OpenAI API in async programming and allows setting the number of concurrent requests and timeout.
+It also uses tqdm to show the progress of the requests.
 
 Author: Kaicheng Yang <yang3kc@gmail.com>
 """
