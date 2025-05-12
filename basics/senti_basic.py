@@ -13,13 +13,11 @@ user_instruction = f"Given the following text message: '{text_message}', please 
 
 client = OpenAI()
 
-completion = client.chat.completions.create(
-    model="gpt-3.5-turbo",
-    temperature=0.0,
-    messages=[
-        {"role": "system", "content": system_prompt},
-        {"role": "user", "content": user_instruction},
-    ],
+response = client.responses.create(
+    model="gpt-4.1-mini",
+    temperature=0,
+    instructions=system_prompt,
+    input=user_instruction,
 )
 
-print(completion.choices[0].message.content)
+print(response.output_text)
