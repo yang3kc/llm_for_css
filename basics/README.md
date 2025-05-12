@@ -21,26 +21,28 @@ user_instruction = f"Given the following text message: '{text_message}', please 
 
 client = OpenAI()
 
-completion = client.chat.completions.create(
-    model="gpt-3.5-turbo",
-    temperature=0.0,
-    messages=[
-        {"role": "system", "content": system_prompt},
-        {"role": "user", "content": user_instruction},
-    ],
+response = client.responses.create(
+    model="gpt-4.1-mini",
+    temperature=0,
+    instructions=system_prompt,
+    input=user_instruction,
 )
 
-print(completion.choices[0].message.content)
+print(response.output_text)
 ```
 
-You can see and run the [script](/basics/senti_basic.py) directly.
+You can see and run the [script](/basics/senti_basic.py) directly with the following command:
 
-The output is
+```bash
+uv run senti_basic.py
+```
+
+The output I got is (note that the response might be different for you even though the temperature is set to 0):
 
 ```
-Sentiment Score: 0.8
+The sentiment score for the text message "The service here is very good!" is **0.8**.
 
-Explanation: The text message "The service here is very good!" conveys a positive sentiment. The use of the word "good" and the intensifier "very" both indicate a high level of satisfaction with the service. Overall, the message expresses a positive sentiment towards the service, hence the score of 0.8.
+Explanation: The phrase "very good" clearly indicates a positive sentiment towards the service. The use of "very" intensifies the positivity, making it stronger than just "good." There are no negative words or mixed sentiments present. However, since it is a straightforward positive statement without extreme enthusiasm or superlatives like "excellent" or "amazing," the score is high but not at the maximum of 1.
 ```
 
 # Next steps
@@ -52,7 +54,7 @@ And using the simple script above becomes difficult for a couple of reasons:
 Although it's easy for human to extract the key information, dealing with it using programs is difficult.
 2. Running the script to process your text messages one by one can be slow.
 
-To deal with issue 1, we can leverage the JSON mode of OpenAI's API to specify the output format.
+To deal with issue 1, we can leverage the structured output of OpenAI's API to specify the output format.
 See [structured_output](/structured_output) for details.
 
 For issue 2, there are two options:
@@ -60,4 +62,4 @@ For issue 2, there are two options:
 1. If you are not in a rush, you can use the batch API to process large amounts of data with reduced cost. See [batch_processing](/batch_processing) for details.
 
 Personally, I prefer the second option because it can significantly reduce the cost and doesn't need to deal with the async programming.
-But only OpenAI offers batch API right now, while async programming works well with other providers too.
+Some other providers such as Anthropic also provide batch API, but others still don't.
