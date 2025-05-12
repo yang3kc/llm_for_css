@@ -1,7 +1,8 @@
 # TL;DR
 
 Here is a [template](/async_programming/async_template.py) script to process text messages with async programming.
-It allows you to set a max number of concurrent requests to the API.
+It allows you to set a max number of concurrent requests to the API and a timeout for each request.
+It also uses tqdm to show the progress of the requests.
 You can use the script as a starting point for your own implementation.
 
 # Introduction
@@ -10,7 +11,6 @@ If you have a large number of text messages to process, querying the API for the
 
 Luckily, OpenAI allows sending multiple queries simultaneously to the API (async programming).
 Note that different users might have different [rate limits](https://platform.openai.com/docs/guides/rate-limits/usage-tiers).
-For instance, `Tier 1` users can send up to 3,500 queries per minute to the `gpt-3.5-turbo` model.
 This feature means that while you are waiting for the response, you can process other text messages, greatly saving your time.
 
 Here is my own experience.
@@ -22,7 +22,7 @@ With the new implementation, it only takes a few seconds to process all the pape
 
 # Warning
 
-Async programming is complicated, and you might run into a sorts of issues if you don't know what you are doing.
+Async programming is complicated, and you might run into all sorts of issues if you don't know what you are doing.
 My suggestion is that you should only consider this approach when you absolutely need it.
 If you don't have that many text messages to process, you can just use a for loop.
 If you are not in a rush, you should also consider the new [batch API](/batch_processing), which is much easier to handle and costs only half the price.
@@ -53,27 +53,21 @@ client = OpenAI()
 
 def process_text_message(text_message):
     print(f"Working on text message: {text_message}")
-    completion = client.chat.completions.create(
-        model="gpt-3.5-turbo",
+    response = client.responses.parse(
+        model="gpt-4.1-mini",
         temperature=0.0,
-        response_format={"type": "json_object"},
-        messages=[
-            {"role": "system", "content": system_prompt},
-            {
-                "role": "user",
-                "content": user_instruction.format(text_message=text_message),
-            },
-        ],
+        text_format=Sentiment,
+        instructions=system_prompt,
+        input=user_instruction.format(text_message=text_message),
     )
 
-    senti_score_result = Sentiment.model_validate_json(
-        completion.choices[0].message.content
-    )
+    senti_score_result = response.output_parsed
     result = {
         "text_message": text_message,
         "chatgpt_response": senti_score_result.model_dump(),
     }
     return result
+
 ```
 
 Running it with a for loop is straight forward:
@@ -93,23 +87,15 @@ async_client = AsyncOpenAI()
 
 async def process_text_message_async(text_message):
     print(f"Working on text message: {text_message}")
-    completion = await async_client.chat.completions.create(
-        model="gpt-3.5-turbo",
+    response = await async_client.responses.parse(
+        model="gpt-4.1-mini",
         temperature=0.0,
-        response_format={"type": "json_object"},
-        messages=[
-            {"role": "system", "content": system_prompt},
-            {
-                "role": "user",
-                "content": user_instruction.format(text_message=text_message),
-            },
-        ],
+        text_format=Sentiment,
+        instructions=system_prompt,
+        input=user_instruction.format(text_message=text_message),
     )
 
-    senti_score_result = Sentiment.model_validate_json(
-        completion.choices[0].message.content
-    )
-    # Async programming won't maintain the order of the results, so we need to return a dictionary with the input text message as well
+    senti_score_result = response.output_parsed
     result = {
         "text_message": text_message,
         "chatgpt_response": senti_score_result.model_dump(),
@@ -136,7 +122,7 @@ for result in async_results:
     print(result)
 ```
 
-I benchmarked the performance of the two implementations and found that the async implementation is much faster: 7.5s to 2.03s.
+I benchmarked the performance of the two implementations and found that the async implementation is much faster: 14.08s to 2.59s.
 The improvement will be more significant if you have more text messages to process.
 
 # A template script
@@ -148,4 +134,5 @@ To avoid hitting these limits, we can set a maximum number of concurrent request
 This can be implemented using `asyncio.Semaphore`.
 
 This part can be complicated, so I create a [template script](/async_programming/async_template.py) to help you get started.
-Note that the script lacks code for error and rate limit handling, so use at your own risk.
+It also has some other nice features, like setting a timeout for each request and using tqdm to show the progress.
+You might still need to add more code to handle other errors to make your application more robust, though.
