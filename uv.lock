@@ -139,10 +139,14 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "openai" },
+    { name = "tqdm" },
 ]
 
 [package.metadata]
-requires-dist = [{ name = "openai", specifier = ">=1.78.1" }]
+requires-dist = [
+    { name = "openai", specifier = ">=1.78.1" },
+    { name = "tqdm", specifier = ">=4.67.1" },
+]
 
 [[package]]
 name = "openai"
