@@ -4,6 +4,7 @@
 **[v2.0 changes]**:
 - Moved from OpenAI's Chat Completions API to Responses API.
 - Using the text format method to define structured output.
+- Using [uv](https://docs.astral.sh/uv/getting-started/installation/) to manage dependencies.
 
 If you still need to use the Chat Completions API, check out the [v1.0 branch](https://github.com/yang3kc/llm_for_css/tree/v1.0).
 
@@ -18,11 +19,11 @@ But many of the tips and tricks are applicable to other providers as well.
 The following topics are covered:
 
 1. [Handling API keys properly](#api-key-please-read-this-first)
-1. [Writing a simple Python script to query the API](/basics)
-1. [Using JSON mode to obtain structured output and parse (validate) the output](/structured_output)
-1. [Using async programming to accelerate the querying process](/async_programming)
-1. [Using the batch API to process large amounts of data with reduced cost](/batch_processing)
-1. [Querying different models in a unified interface](/unified_interface)
+1. [Writing a simple Python script to query the API](/basics) (TODO)
+1. [Using JSON mode to obtain structured output and parse (validate) the output](/structured_output) (TODO)
+1. [Using async programming to accelerate the querying process](/async_programming) (TODO)
+1. [Using the batch API to process large amounts of data with reduced cost](/batch_processing) (TODO)
+1. [Querying different models in a unified interface](/unified_interface) (TODO)
 
 # API key (please read this first!!!)
 
@@ -55,14 +56,18 @@ The `openai` package will automatically use the API key from the environment var
 Alternatively, you can consider using the [`python-dotenv`](https://github.com/theskumar/python-dotenv) package to load the API key from the `.env` file.
 Remember to add `.env` to your `.gitignore` file to prevent it from being committed.
 
+See [.env.example](.env.example) for an example of the `.env` file.
 
-# Dependency
 
-To run the example scripts in this repo, you need the following dependencies:
-- `openai>=1.23`
-- `pydantic>=2.7`
+# Dependencies
 
-I only tested the code using `python 3.10`.
+We use [uv](https://docs.astral.sh/uv/getting-started/installation/) to manage dependencies for this project.
+
+To install the dependencies, run the following command:
+
+```bash
+uv sync
+```
 
 # Roadmap
 
