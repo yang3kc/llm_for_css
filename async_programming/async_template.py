@@ -43,29 +43,39 @@ class Sentiment(BaseModel):
 async_client = AsyncOpenAI()
 
 
-async def process_text_message_async(text_message):
-    response = await async_client.responses.parse(
-        model="gpt-4.1-mini",
-        temperature=0.0,
-        instructions=system_prompt,
-        input=user_instruction.format(text_message=text_message),
-        text_format=Sentiment,
-    )
+async def process_text_message_async(text_message, timeout_seconds=10):
+    try:
+        response = await asyncio.wait_for(
+            async_client.responses.parse(
+                model="gpt-4.1-mini",
+                temperature=0.0,
+                instructions=system_prompt,
+                input=user_instruction.format(text_message=text_message),
+                text_format=Sentiment,
+            ),
+            timeout=timeout_seconds,
+        )
 
-    senti_score_result = response.output_parsed
-    # Async programming won't maintain the order of the results, so we need to return a dictionary with the input text message as well
-    result = {
-        "text_message": text_message,
-        "response": senti_score_result.model_dump(),
-    }
-    return result
+        senti_score_result = response.output_parsed
+        # Async programming won't maintain the order of the results, so we need to return a dictionary with the input text message as well
+        result = {
+            "text_message": text_message,
+            "response": senti_score_result.model_dump(),
+        }
+        return result
+    except asyncio.TimeoutError:
+        return f"Timeout for text message: {text_message}"
+    except Exception as e:
+        return f"Error for text message: {text_message}, error: {e}"
 
 
-async def async_main(text_messages, concurrent_tasks=3):
+async def async_main(text_messages, concurrent_tasks=3, timeout_seconds=10):
     # Create tasks properly
     tasks = []
     for text_message in text_messages:
-        task = asyncio.create_task(process_text_message_async(text_message))
+        task = asyncio.create_task(
+            process_text_message_async(text_message, timeout_seconds=timeout_seconds)
+        )
         tasks.append(task)
 
     # Apply concurrency limit
@@ -84,7 +94,9 @@ async def async_main(text_messages, concurrent_tasks=3):
 
 
 if __name__ == "__main__":
-    async_results = asyncio.run(async_main(text_messages, concurrent_tasks=3))
+    async_results = asyncio.run(
+        async_main(text_messages, concurrent_tasks=3, timeout_seconds=10)
+    )
     for result in async_results:
         # Here we check if the result is an exception
         # You might need to re-try the failed requests later
