@@ -69,6 +69,13 @@ To install the dependencies, run the following command:
 uv sync
 ```
 
+You can run the scripts using the following command:
+
+```bash
+uv run script.py
+```
+
+
 # Roadmap
 
 I'm also considering writing on the following topics:
