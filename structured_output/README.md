@@ -53,6 +53,10 @@ You can access the parsed output by calling `response.output_parsed`.
 
 The whole script can be found in [structured_output.py](/structured_output/structured_output.py)
 
+Alternatively, you can also use the JSON schema to get the output as a string and parse it yourself.
+
+The whole script can be found in [structured_output_schema.py](/structured_output/structured_output_schema.py)
+
 # Additional tips
 
 If you are using the API from a provider that doesn't support structured output, you can still use the JSON mode to get a JSON string and parse it yourself.
