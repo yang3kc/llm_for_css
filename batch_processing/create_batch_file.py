@@ -23,15 +23,30 @@ system_prompt = "You are an expert on sentiment analysis. Your job is to evaluat
 user_instruction = """
     Given the following text message: '{text_message}', please evaluate its sentiment by giving a score in the range of -1 to 1, where -1 means negative and 1 means positive.
     Also explain why.
-    The output should be in JSON format and follow the following schema:
-    --------------
-    ```json
-    {{
-        'score': 0.1,
-        'explanation': '...'
-    }}
-     ```
     """
+
+#######################################
+# JSON schema for the response
+# For the batch API, you have to specify the schema manually
+sentiment_json_schema = {
+    "type": "object",
+    "title": "Sentiment",
+    "required": ["score", "explanation"],
+    "properties": {
+        "score": {
+            "type": "number",
+            "title": "Score",
+            "description": "Sentiment score in the range of -1 to 1, where -1 means negative and 1 means positive.",
+        },
+        "explanation": {
+            "type": "string",
+            "title": "Explanation",
+            "description": "Explanation of the sentiment score.",
+        },
+    },
+    "additionalProperties": False,
+}
+
 
 #######################################
 # Create tasks
@@ -43,19 +58,21 @@ for index, text_message in enumerate(text_messages):
         # Instead of generating the ID on the fly, it's recommended to assign a unique ID to each input message at the beginning
         "custom_id": f"text_message_{index}",
         "method": "POST",
-        "url": "/v1/chat/completions",
+        "url": "/v1/responses",
         "body": {
             # This is what you would have in your Chat Completions API call
-            "model": "gpt-3.5-turbo",
+            "model": "gpt-4o-mini",
             "temperature": 0.0,
-            "response_format": {"type": "json_object"},
-            "messages": [
-                {"role": "system", "content": system_prompt},
-                {
-                    "role": "user",
-                    "content": user_instruction.format(text_message=text_message),
-                },
-            ],
+            "instructions": system_prompt,
+            "input": user_instruction.format(text_message=text_message),
+            "text": {
+                "format": {
+                    "type": "json_schema",
+                    "name": "sentiment",
+                    "strict": True,
+                    "schema": sentiment_json_schema,
+                }
+            },
         },
     }
 
