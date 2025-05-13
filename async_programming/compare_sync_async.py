@@ -26,25 +26,14 @@ system_prompt = "You are an expert on sentiment analysis. Your job is to evaluat
 user_instruction = """
     Given the following text message: '{text_message}', please evaluate its sentiment by giving a score in the range of -1 to 1, where -1 means negative and 1 means positive.
     Also explain why.
-    The output should be in JSON format and follow the following schema:
-    --------------
-    ```json
-    {{
-        'score': 0.1,
-        'explanation': '...'
-    }}
-     ```
     """
 
 
 #######################################
 # Here we define a pydantic model to validate the output
-# The data model should be consistent with the schema defined in the prompt
 class Sentiment(BaseModel):
     score: float = Field(
-        description="Sentiment score in the range of -1 to 1, where -1 means negative and 1 means positive.",
-        ge=-1,
-        le=1,
+        description="Sentiment score in the range of -1 to 1, where -1 means negative and 1 means positive."
     )
     explanation: str = Field(description="Explanation of the sentiment score.")
 
@@ -60,22 +49,15 @@ client = OpenAI()
 # Let's first define a function to process the text message
 def process_text_message(text_message):
     print(f"Working on text message: {text_message}")
-    completion = client.chat.completions.create(
-        model="gpt-3.5-turbo",
+    response = client.responses.parse(
+        model="gpt-4.1-mini",
         temperature=0.0,
-        response_format={"type": "json_object"},
-        messages=[
-            {"role": "system", "content": system_prompt},
-            {
-                "role": "user",
-                "content": user_instruction.format(text_message=text_message),
-            },
-        ],
+        text_format=Sentiment,
+        instructions=system_prompt,
+        input=user_instruction.format(text_message=text_message),
     )
 
-    senti_score_result = Sentiment.model_validate_json(
-        completion.choices[0].message.content
-    )
+    senti_score_result = response.output_parsed
     result = {
         "text_message": text_message,
         "chatgpt_response": senti_score_result.model_dump(),
@@ -105,23 +87,15 @@ async_client = AsyncOpenAI()
 # Note that the difference with the sync version is the `async` and `await` keywords
 async def process_text_message_async(text_message):
     print(f"Working on text message: {text_message}")
-    completion = await async_client.chat.completions.create(
-        model="gpt-3.5-turbo",
+    response = await async_client.responses.parse(
+        model="gpt-4.1-mini",
         temperature=0.0,
-        response_format={"type": "json_object"},
-        messages=[
-            {"role": "system", "content": system_prompt},
-            {
-                "role": "user",
-                "content": user_instruction.format(text_message=text_message),
-            },
-        ],
+        text_format=Sentiment,
+        instructions=system_prompt,
+        input=user_instruction.format(text_message=text_message),
     )
 
-    senti_score_result = Sentiment.model_validate_json(
-        completion.choices[0].message.content
-    )
-    # Async programming won't maintain the order of the results, so we need to return a dictionary with the input text message as well
+    senti_score_result = response.output_parsed
     result = {
         "text_message": text_message,
         "chatgpt_response": senti_score_result.model_dump(),

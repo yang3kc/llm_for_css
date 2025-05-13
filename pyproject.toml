@@ -1,0 +1,10 @@
+[project]
+name = "llm-for-css"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "openai>=1.78.1",
+    "tqdm>=4.67.1",
+]
