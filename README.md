@@ -84,3 +84,11 @@ I'm also considering writing on the following topics:
 
 If you have questions or suggestions, please open issues.
 Pull requests are also welcome!
+
+# Other resources
+
+Find this repo useful? Check out my other repos!
+
+- [daily_arxiv_digest](https://github.com/yang3kc/daily_arxiv_digest): Using ChatGPT to select interesting arXiv papers
+- [cursor_latex_template](https://github.com/yang3kc/cursor_latex_template): Cursor configuration for LaTeX projects
+- [llm_git_commit](https://github.com/yang3kc/llm_git_commit): Command line tool to use LLM to generate git commit messages
