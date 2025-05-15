@@ -60,6 +60,7 @@ def process_text_message(text_message):
     return result
 
 
+# Here we use 3 threads to process the text messages
 N_THREADS = 3
 print(f"Threading method with {N_THREADS} threads:")
 start_time = time.perf_counter()
