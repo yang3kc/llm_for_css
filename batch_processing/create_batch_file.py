@@ -61,8 +61,7 @@ for index, text_message in enumerate(text_messages):
         "url": "/v1/responses",
         "body": {
             # This is what you would have in your Chat Completions API call
-            "model": "gpt-4o-mini",
-            "temperature": 0.0,
+            "model": "gpt-5.6-luna",
             "instructions": system_prompt,
             "input": user_instruction.format(text_message=text_message),
             "text": {

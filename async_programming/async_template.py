@@ -48,8 +48,7 @@ async def process_text_message_async(text_message, timeout_seconds=10):
     try:
         response = await asyncio.wait_for(
             async_client.responses.parse(
-                model="gpt-4.1-mini",
-                temperature=0.0,
+                model="gpt-5.6-luna",
                 instructions=system_prompt,
                 input=user_instruction.format(text_message=text_message),
                 text_format=Sentiment,
