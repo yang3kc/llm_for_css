@@ -34,6 +34,7 @@ nav:
   - Structured output: structured_output.ipynb
   - Async programming: async_programming.ipynb
   - Batch processing: batch_processing.md
+  - Anthropic API: anthropic.ipynb
 
 plugins:
   - search
