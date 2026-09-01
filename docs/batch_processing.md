@@ -1,6 +1,6 @@
 # Batch processing
 
-This section contains instructions and example code for using [OpenAI's batch API](https://platform.openai.com/docs/api-reference/batch) to process large amounts of data with reduced cost.
+This section contains instructions and example code for using [OpenAI's batch API](https://developers.openai.com/api/docs/api-reference/batch) to process large amounts of data with reduced cost.
 The idea is simple, you put all your prompts in a file, upload the file to OpenAI's server, and wait for up to 24 hours the responses (my tests show that it's much faster than that actually, but this might change).
 
 Here, I'm going to use the same sentiment analysis example for demonstration.

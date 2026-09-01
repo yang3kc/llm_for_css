@@ -45,8 +45,7 @@ client = OpenAI()
 # Define a function to process the text message
 def process_text_message(text_message):
     response = client.responses.parse(
-        model="gpt-4.1-mini",
-        temperature=0.0,
+        model="gpt-5.6-luna",
         text_format=Sentiment,
         instructions=system_prompt,
         input=user_instruction.format(text_message=text_message),
