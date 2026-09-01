@@ -36,6 +36,7 @@ nav:
   - Batch processing: batch_processing.md
   - Anthropic API: anthropic.ipynb
   - Open-source models: open_source_models.ipynb
+  - Local LLMs: local_llms.md
 
 plugins:
   - search
