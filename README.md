@@ -27,6 +27,7 @@ The following topics are covered:
 1. [Using the batch API to process large amounts of data with reduced cost](/batch_processing)
 1. [Using Anthropic's Claude models](/anthropic)
 1. [Using open-source models via hosted APIs](/open_source_models)
+1. [Running LLMs locally](/local_llms) (coming soon)
 
 # API key (please read this first!!!)
 

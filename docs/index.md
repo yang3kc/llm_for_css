@@ -15,8 +15,7 @@ The following topics are covered:
 1. [Using the batch API to process large amounts of data with reduced cost](batch_processing.md)
 1. [Using Anthropic's Claude models](anthropic.ipynb)
 1. [Using open-source models via hosted APIs](open_source_models.ipynb)
-
-A chapter on running LLMs locally is planned.
+1. [Running LLMs locally](local_llms.md) (coming soon)
 
 Most sections are runnable Jupyter notebooks — use the **Open in Colab** badge at the top of a page to try the code without installing anything. The notebooks and remaining scripts live in the [GitHub repository](https://github.com/yang3kc/llm_for_css).
 
