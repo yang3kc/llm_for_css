@@ -35,6 +35,7 @@ nav:
   - Async programming: async_programming.ipynb
   - Batch processing: batch_processing.md
   - Anthropic API: anthropic.ipynb
+  - Open-source models: open_source_models.ipynb
 
 plugins:
   - search

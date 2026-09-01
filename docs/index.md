@@ -14,8 +14,9 @@ The following topics are covered:
 1. [Using async programming to accelerate the querying process](async_programming.ipynb)
 1. [Using the batch API to process large amounts of data with reduced cost](batch_processing.md)
 1. [Using Anthropic's Claude models](anthropic.ipynb)
+1. [Using open-source models via hosted APIs](open_source_models.ipynb)
 
-Chapters on open-source models via hosted APIs and running LLMs locally are planned.
+A chapter on running LLMs locally is planned.
 
 Most sections are runnable Jupyter notebooks — use the **Open in Colab** badge at the top of a page to try the code without installing anything. The notebooks and remaining scripts live in the [GitHub repository](https://github.com/yang3kc/llm_for_css).
 
