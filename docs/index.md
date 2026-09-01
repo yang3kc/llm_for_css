@@ -13,7 +13,8 @@ The following topics are covered:
 1. [Obtaining structured output](structured_output.ipynb)
 1. [Using async programming to accelerate the querying process](async_programming.ipynb)
 1. [Using the batch API to process large amounts of data with reduced cost](batch_processing.md)
-1. [Querying different models in a unified interface](unified_interface.md) (Needs updates)
+
+Chapters on the Anthropic API, open-source models via hosted APIs, and running LLMs locally are planned.
 
 Most sections are runnable Jupyter notebooks — use the **Open in Colab** badge at the top of a page to try the code without installing anything. The notebooks and remaining scripts live in the [GitHub repository](https://github.com/yang3kc/llm_for_css).
 

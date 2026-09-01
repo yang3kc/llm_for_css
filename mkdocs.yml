@@ -34,7 +34,6 @@ nav:
   - Structured output: structured_output.ipynb
   - Async programming: async_programming.ipynb
   - Batch processing: batch_processing.md
-  - Unified interface: unified_interface.md
 
 plugins:
   - search
