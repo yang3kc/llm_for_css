@@ -11,5 +11,6 @@ dependencies = [
 
 [dependency-groups]
 docs = [
+    "mkdocs-jupyter>=0.26.3",
     "mkdocs-material>=9.7.7",
 ]
