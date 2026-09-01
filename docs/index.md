@@ -9,13 +9,13 @@ But many of the tips and tricks are applicable to other providers as well.
 The following topics are covered:
 
 1. [Handling API keys properly](#api-key-please-read-this-first) (on this page)
-1. [Writing a simple Python script to query the API](basics.md)
-1. [Obtaining structured output](structured_output.md)
-1. [Using async programming to accelerate the querying process](async_programming.md)
+1. [Writing a simple Python script to query the API](basics.ipynb)
+1. [Obtaining structured output](structured_output.ipynb)
+1. [Using async programming to accelerate the querying process](async_programming.ipynb)
 1. [Using the batch API to process large amounts of data with reduced cost](batch_processing.md)
 1. [Querying different models in a unified interface](unified_interface.md) (Needs updates)
 
-All the runnable code lives in the [GitHub repository](https://github.com/yang3kc/llm_for_css); each page links to the scripts it discusses.
+Most sections are runnable Jupyter notebooks — use the **Open in Colab** badge at the top of a page to try the code without installing anything. The notebooks and remaining scripts live in the [GitHub repository](https://github.com/yang3kc/llm_for_css).
 
 ## API key (please read this first!!!)
 
@@ -50,6 +50,8 @@ Alternatively, you can consider using the [`python-dotenv`](https://github.com/t
 Remember to add `.env` to your `.gitignore` file to prevent it from being committed.
 
 See [.env.template](https://github.com/yang3kc/llm_for_css/blob/main/.env.template) for an example of the `.env` file.
+
+On **Google Colab**, use Colab Secrets instead: click the key icon in the left sidebar, add a secret named `OPENAI_API_KEY`, and enable notebook access. The tutorial notebooks read the key from there automatically.
 
 ## Dependencies
 

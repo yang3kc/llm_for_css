@@ -30,11 +30,16 @@ theme:
 
 nav:
   - Home: index.md
-  - Basics: basics.md
-  - Structured output: structured_output.md
-  - Async programming: async_programming.md
+  - Basics: basics.ipynb
+  - Structured output: structured_output.ipynb
+  - Async programming: async_programming.ipynb
   - Batch processing: batch_processing.md
   - Unified interface: unified_interface.md
+
+plugins:
+  - search
+  - mkdocs-jupyter:
+      include_source: true
 
 markdown_extensions:
   - admonition
