@@ -1,42 +1,72 @@
 site_name: LLM for Computational Social Science
 site_description: Guidance and examples for using LLM APIs in computational social science research
 site_url: https://yang3kc.github.io/llm_for_css/
+site_author: Kaicheng Yang
 repo_url: https://github.com/yang3kc/llm_for_css
 repo_name: yang3kc/llm_for_css
+copyright: Copyright &copy; 2024–2026 Kaicheng Yang
 
 theme:
   name: material
+  font: false
+  icon:
+    logo: material/robot-outline
+    repo: fontawesome/brands/github
+  favicon: assets/favicon.svg
   palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
-      accent: indigo
+      primary: teal
+      accent: teal
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
-      accent: indigo
+      primary: teal
+      accent: teal
       toggle:
         icon: material/brightness-4
-        name: Switch to light mode
+        name: Switch to system preference
   features:
+    - navigation.sections
+    - navigation.top
     - navigation.footer
     - navigation.tracking
+    - toc.follow
     - content.code.copy
+    - content.code.annotate
     - search.suggest
     - search.highlight
+    - search.share
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/yang3kc
+      name: Kaicheng Yang on GitHub
+    - icon: fontawesome/solid/globe
+      link: https://www.kaichengyang.me
+      name: Kaicheng Yang's website
+
+extra_css:
+  - stylesheets/extra.css
 
 nav:
   - Home: index.md
-  - Basics: basics.ipynb
-  - Structured output: structured_output.ipynb
-  - Async programming: async_programming.ipynb
-  - Batch processing: batch_processing.md
-  - Anthropic API: anthropic.ipynb
-  - Open-source models: open_source_models.ipynb
-  - Local LLMs: local_llms.md
+  - OpenAI API:
+      - Basics: basics.ipynb
+      - Structured output: structured_output.ipynb
+      - Async programming: async_programming.ipynb
+      - Batch processing: batch_processing.md
+  - Other providers:
+      - Anthropic API: anthropic.ipynb
+      - Open-source models: open_source_models.ipynb
+      - Local LLMs: local_llms.md
 
 plugins:
   - search
@@ -45,6 +75,8 @@ plugins:
 
 markdown_extensions:
   - admonition
+  - attr_list
+  - md_in_html
   - toc:
       permalink: true
   - pymdownx.details
@@ -55,3 +87,6 @@ markdown_extensions:
   - pymdownx.snippets:
       base_path: ["."]
       check_paths: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg

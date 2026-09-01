@@ -1,0 +1,19 @@
+/* Small adjustments on top of Material for MkDocs. */
+
+/* Landing page cards: a touch more breathing room. */
+.md-typeset .grid.cards > ul > li {
+  padding: 1rem 1.2rem;
+}
+.md-typeset .grid.cards > ul > li > hr {
+  margin: 0.6rem 0;
+}
+
+/* Keep model names on one line in tables; the table scrolls on narrow screens. */
+.md-typeset table:not([class]) code {
+  white-space: nowrap;
+}
+
+/* Slightly larger lead paragraph under the page title on the home page. */
+.md-typeset .lead {
+  font-size: 1.05rem;
+}
