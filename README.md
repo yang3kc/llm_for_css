@@ -25,6 +25,7 @@ The following topics are covered:
 1. [Obtaining structured output](/structured_output)
 1. [Using async programming to accelerate the querying process](/async_programming)
 1. [Using the batch API to process large amounts of data with reduced cost](/batch_processing)
+1. [Using Anthropic's Claude models](/anthropic)
 
 # API key (please read this first!!!)
 
