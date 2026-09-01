@@ -8,3 +8,8 @@ dependencies = [
     "openai>=1.78.1",
     "tqdm>=4.67.1",
 ]
+
+[dependency-groups]
+docs = [
+    "mkdocs-material>=9.7.7",
+]

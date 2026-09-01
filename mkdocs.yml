@@ -1,0 +1,50 @@
+site_name: LLM for Computational Social Science
+site_description: Guidance and examples for using LLM APIs in computational social science research
+site_url: https://yang3kc.github.io/llm_for_css/
+repo_url: https://github.com/yang3kc/llm_for_css
+repo_name: yang3kc/llm_for_css
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.footer
+    - navigation.tracking
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+
+nav:
+  - Home: index.md
+  - Basics: basics.md
+  - Structured output: structured_output.md
+  - Async programming: async_programming.md
+  - Batch processing: batch_processing.md
+  - Unified interface: unified_interface.md
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.snippets:
+      base_path: ["."]
+      check_paths: true
