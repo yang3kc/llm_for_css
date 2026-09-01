@@ -1,95 +1,84 @@
-# Introduction
+# LLM for Computational Social Science
 
-> **📖 This tutorial is now available as a website: https://yang3kc.github.io/llm_for_css/** (easier to read and navigate; content here and there is the same while the migration completes)
+Guidance, recommendations, and runnable examples for using LLM APIs in computational social science research: from a first API call to processing tens of thousands of text messages efficiently and at low cost.
 
-## Change logs
-**[v2.0 changes]**:
-- Moved from OpenAI's Chat Completions API to Responses API.
-- Using the text format method to define structured output.
-- Using [uv](https://docs.astral.sh/uv/getting-started/installation/) to manage dependencies.
+**Read the tutorial on the website: https://yang3kc.github.io/llm_for_css/**
 
-If you still need to use the Chat Completions API, check out the [v1.0 branch](https://github.com/yang3kc/llm_for_css/tree/v1.0).
+The website is the canonical version of the tutorial.
+This repository holds its source: the notebooks and scripts, and the MkDocs configuration that builds the site.
 
-## Background
+## What is covered
 
-Using LLMs for computational social science research can be as simple as asking the models questions through a chat box and expecting responses.
-However, things become tricky when you want to use the model to process tens of thousands of text messages programmatically.
+| Chapter | Format |
+|---|---|
+| [Basics](https://yang3kc.github.io/llm_for_css/basics/): your first API call from Python | Notebook |
+| [Structured output](https://yang3kc.github.io/llm_for_css/structured_output/): answers as validated Python objects | Notebook |
+| [Async programming](https://yang3kc.github.io/llm_for_css/async_programming/): many requests at once | Notebook + template scripts |
+| [Batch processing](https://yang3kc.github.io/llm_for_css/batch_processing/): half price for large jobs | Notebook + script |
+| [Anthropic API](https://yang3kc.github.io/llm_for_css/anthropic/): Claude models | Notebook |
+| [Open-source models](https://yang3kc.github.io/llm_for_css/open_source_models/): open-weight models through OpenRouter | Notebook |
+| [Local LLMs](https://yang3kc.github.io/llm_for_css/local_llms/): run a model on your own computer with Ollama | Scripts |
 
-The goal of this repository is to provide guidance, recommendations, and examples on how to do this correctly and efficiently.
-I'll focus on OpenAI's API.
-But many of the tips and tricks are applicable to other providers as well.
-The following topics are covered:
+Not sure where to start? See [Which provider should I use?](https://yang3kc.github.io/llm_for_css/#which-provider-should-i-use) on the website.
 
-1. [Handling API keys properly](#api-key-please-read-this-first)
-1. [Writing a simple Python script to query the API](/basics)
-1. [Obtaining structured output](/structured_output)
-1. [Using async programming to accelerate the querying process](/async_programming)
-1. [Using the batch API to process large amounts of data with reduced cost](/batch_processing)
-1. [Using Anthropic's Claude models](/anthropic)
-1. [Using open-source models via hosted APIs](/open_source_models)
-1. [Running LLMs locally](/local_llms)
+Every notebook has an **Open in Colab** badge, so you can run it without installing anything.
 
-# API key (please read this first!!!)
+## Running the code locally
 
-First rule of working with API providers: **Never** put your API key in your script or Jupyter notebook.
-In other words, you should **not** start your script with the following:
+1. Clone the repository and install the dependencies with [uv](https://docs.astral.sh/uv/getting-started/installation/):
 
-```python
-from openai import OpenAI
+   ```bash
+   uv sync
+   ```
 
-client = OpenAI(api_key="<your OpenAI API key>")
-```
+2. Set your API key. **Never put the key in a script or notebook.** Either export it as an environment variable:
 
-Instead, consider adding the API key as an environment variable called `OPENAI_API_KEY`, which can be achieved with the following shell command:
+   ```bash
+   export OPENAI_API_KEY="<your OpenAI API key>"
+   ```
 
-```bash
-export OPENAI_API_KEY="<your OpenAI API key>"
-```
-You can also add this to your `.bashrc` or `.zshrc` file for convenience.
+   or copy [`.env.template`](.env.template) to `.env` and fill it in (`.env` is git-ignored). The [API key section](https://yang3kc.github.io/llm_for_css/#api-key-please-read-this-first) on the website has the details, including how to do this on Colab.
 
-Then, you can start your script or Jupyter notebook with the following:
+3. Run a script, for example:
 
-```python
-from openai import OpenAI
+   ```bash
+   uv run async_programming/async_template.py
+   ```
 
-client = OpenAI()
-```
+   or open a notebook from `docs/` in Jupyter.
 
-The `openai` package will automatically use the API key from the environment variable `OPENAI_API_KEY`.
+## Repository layout
 
-Alternatively, you can consider using the [`python-dotenv`](https://github.com/theskumar/python-dotenv) package to load the API key from the `.env` file.
-Remember to add `.env` to your `.gitignore` file to prevent it from being committed.
+| Path | Contents |
+|---|---|
+| `docs/` | The website pages: the notebooks (`*.ipynb`) and the markdown chapters |
+| `async_programming/`, `batch_processing/`, `local_llms/` | Scripts and data files that the chapters embed or link to |
+| `basics/`, `structured_output/` | Pointer READMEs kept for old links; the content moved to notebooks in `docs/` |
+| `mkdocs.yml` | Site configuration (Material for MkDocs) |
+| `.env.template` | Template for the local `.env` file |
 
-See [.env.example](.env.example) for an example of the `.env` file.
-
-
-# Dependencies
-
-We use [uv](https://docs.astral.sh/uv/getting-started/installation/) to manage dependencies for this project.
-
-To install the dependencies, run the following command:
+To preview the website locally:
 
 ```bash
-uv sync
+uv sync --group docs
+uv run mkdocs serve
 ```
 
-You can run the scripts using the following command:
+The site is deployed to GitHub Pages by a GitHub Actions workflow on every push to `main`.
 
-```bash
-uv run script.py
-```
+## Versions
 
+- **v2.0 (current):** Responses API, structured output via the text format method, dependencies managed with uv, notebooks as the canonical format, and chapters for Anthropic, open-source models, and local LLMs.
+- **v1.0:** Chat Completions API. Still available on the [v1.0 branch](https://github.com/yang3kc/llm_for_css/tree/v1.0).
 
-# Roadmap
+## Questions and contributions
 
-All the topics on the original roadmap (other API providers, open-source models, running LLMs locally) are now covered.
+If you have questions or suggestions, please [open an issue](https://github.com/yang3kc/llm_for_css/issues).
+Pull requests are also welcome.
 
-If you have questions or suggestions, please open issues.
-Pull requests are also welcome!
+## Other resources
 
-# Other resources
-
-Find this repo useful? Check out my other repos!
+Find this repository useful? Check out my other repos:
 
 - [daily_arxiv_digest](https://github.com/yang3kc/daily_arxiv_digest): Using ChatGPT to select interesting arXiv papers
 - [cursor_latex_template](https://github.com/yang3kc/cursor_latex_template): Cursor configuration for LaTeX projects
