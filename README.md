@@ -27,7 +27,7 @@ The following topics are covered:
 1. [Using the batch API to process large amounts of data with reduced cost](/batch_processing)
 1. [Using Anthropic's Claude models](/anthropic)
 1. [Using open-source models via hosted APIs](/open_source_models)
-1. [Running LLMs locally](/local_llms) (coming soon)
+1. [Running LLMs locally](/local_llms)
 
 # API key (please read this first!!!)
 
@@ -82,9 +82,7 @@ uv run script.py
 
 # Roadmap
 
-I'm also considering writing on the following topics:
-1. Querying other API providers, such as closed-source model providers like Google and Anthropic and open-source model providers.
-1. Running LLMs locally.
+All the topics on the original roadmap (other API providers, open-source models, running LLMs locally) are now covered.
 
 If you have questions or suggestions, please open issues.
 Pull requests are also welcome!

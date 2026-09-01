@@ -15,7 +15,7 @@ The following topics are covered:
 1. [Using the batch API to process large amounts of data with reduced cost](batch_processing.md)
 1. [Using Anthropic's Claude models](anthropic.ipynb)
 1. [Using open-source models via hosted APIs](open_source_models.ipynb)
-1. [Running LLMs locally](local_llms.md) (coming soon)
+1. [Running LLMs locally](local_llms.md)
 
 Most sections are runnable Jupyter notebooks — use the **Open in Colab** badge at the top of a page to try the code without installing anything. The notebooks and remaining scripts live in the [GitHub repository](https://github.com/yang3kc/llm_for_css).
 
@@ -73,10 +73,7 @@ uv run script.py
 
 ## Roadmap
 
-I'm also considering writing on the following topics:
-
-1. Querying other API providers, such as closed-source model providers like Google and Anthropic and open-source model providers.
-1. Running LLMs locally.
+All the topics on the original roadmap (other API providers, open-source models, running LLMs locally) are now covered.
 
 If you have questions or suggestions, please [open issues](https://github.com/yang3kc/llm_for_css/issues).
 Pull requests are also welcome!
