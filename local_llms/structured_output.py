@@ -26,7 +26,9 @@ user_instruction = f"Given the following text message: '{text_message}', please 
 # Here we define a pydantic model to validate the output
 class Sentiment(BaseModel):
     score: float = Field(
-        description="Sentiment score in the range of -1 to 1, where -1 means negative and 1 means positive."
+        ge=-1,
+        le=1,
+        description="Sentiment score in the range of -1 to 1, where -1 means negative and 1 means positive.",
     )
     explanation: str = Field(description="Explanation of the sentiment score.")
 
