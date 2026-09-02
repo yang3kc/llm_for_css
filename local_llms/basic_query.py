@@ -8,6 +8,7 @@ Before running it, start Ollama and download the model:
 Author: Kaicheng Yang <yang3kc@gmail.com>
 """
 
+# --8<-- [start:code]
 from openai import OpenAI
 
 #######################################
@@ -40,3 +41,4 @@ completion = client.chat.completions.create(
 )
 
 print(completion.choices[0].message.content)
+# --8<-- [end:code]

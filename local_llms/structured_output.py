@@ -8,6 +8,7 @@ Before running it, start Ollama and download the model:
 Author: Kaicheng Yang <yang3kc@gmail.com>
 """
 
+# --8<-- [start:code]
 from openai import OpenAI
 from pydantic import BaseModel, Field
 
@@ -56,3 +57,4 @@ print(parsed_output.model_dump())
 # You can get the score and explanation directly
 print(f"Score: {parsed_output.score}")
 print(f"Explanation: {parsed_output.explanation}")
+# --8<-- [end:code]

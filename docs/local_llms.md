@@ -85,7 +85,7 @@ Compared to the [open-source models](open_source_models.ipynb) chapter, there ar
 2. `gemma4:e2b` is a "thinking" model, meaning it writes out a chain of reasoning before answering. That is useful for hard problems, but for a short classification task it makes each query many times slower. Set `reasoning_effort="none"` to turn it off. Not every model accepts `"none"`: gpt-oss, for example, only knows `"low"`, `"medium"`, and `"high"`, and returns empty output for `"none"`. If a model gives you empty answers, use `"low"`.
 
 ```python
---8<-- "local_llms/basic_query.py"
+--8<-- "local_llms/basic_query.py:code"
 ```
 
 Running the script gives:
@@ -108,7 +108,7 @@ Structured output works the same way as before.
 The `client.chat.completions.parse` method takes the Pydantic model in `response_format`, and Ollama constrains the model's output to match the schema.
 
 ```python
---8<-- "local_llms/structured_output.py"
+--8<-- "local_llms/structured_output.py:code"
 ```
 
 Running the script gives:
