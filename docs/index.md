@@ -1,18 +1,17 @@
 # LLM for Computational Social Science
 
 <p class="lead" markdown>
-Guidance, recommendations, and runnable examples for using LLM APIs in computational social science research: from a first API call to processing tens of thousands of text messages efficiently and at low cost.
+Runnable guidance and examples for using LLM APIs in computational social science research, from a first API call to processing tens of thousands of text messages efficiently and at low cost.
 </p>
 
 Using LLMs for research can be as simple as asking the models questions through a chat box.
-Things become tricky when you want to process tens of thousands of text messages programmatically: keeping keys safe, getting output you can parse, running queries in parallel, and controlling cost.
+Processing tens of thousands of text messages programmatically is harder: you must keep keys safe, get output you can parse, run queries in parallel, and control cost.
 This website walks through each of those steps.
 
 !!! note "What this site does not cover"
     This is a technical guide to interacting with LLMs from code.
     It does not explain how LLMs work, and it is not about AI agents.
-    It also does not cover the methodological side of using LLMs in research, such as validating model output against human labels or reporting results.
-    Those questions matter, but they belong elsewhere.
+    It also does not cover methodological questions such as validating model output against human labels or reporting results.
 The core chapters use OpenAI's API.
 The later chapters show the same patterns with Anthropic, hosted open-source models, and models running on your own computer.
 
@@ -96,13 +95,13 @@ Each chapter covers setup, a basic query, and structured output.
 ## Which provider should I use?
 
 The tutorial covers four ways to reach a model.
-The code is nearly the same for all of them: the `openai` Python package works with every provider except Anthropic, and Anthropic's package follows the same shape.
+The code is nearly the same for all of them. The `openai` Python package works with every provider except Anthropic, whose package has a similar interface.
 Prices are per 1M tokens (input / output) for the example model each chapter uses, as of September 2026; check the provider's pricing page before a large run.
 
 | Provider | Example model | Price per 1M tokens | Setup | Pick it when |
 |---|---|---|---|---|
-| [OpenAI](basics.ipynb) | `gpt-5.6-luna` | $0.20 / $1.20 | One account and key | You are starting out. Most capable ecosystem, best documentation, and the [batch API](batch_processing.md) halves the price for large jobs. |
-| [Anthropic](anthropic.ipynb) | `claude-haiku-4-5` | $1 / $5 | One account and key | You want a second model family to check robustness, or Claude works better on your task. Also has a 50% batch discount. |
+| [OpenAI](basics.ipynb) | `gpt-5.6-luna` | $0.20 / $1.20 | One account and key | You are starting out and want the most capable ecosystem, the best documentation, or a [batch API](batch_processing.md) that halves the price for large jobs. |
+| [Anthropic](anthropic.ipynb) | `claude-haiku-4-5` | $1 / $5 | One account and key | You want a second model family to check robustness, Claude works better on your task, or you want a 50% batch discount. |
 | [Open-source models via OpenRouter](open_source_models.ipynb) | `deepseek/deepseek-v4-flash` | $0.08 / $0.15 | One account and key | You want the lowest per-token cost, access to many open-weight models through one key, or a model you can name exactly in a paper. |
 | [Local with Ollama](local_llms.md) | `gemma4:e2b` | Free | Install Ollama, download a 7 GB model | Your data cannot leave your machine, or you need to rerun the same model years later. Slower and less capable than the hosted options on a laptop; a [GPU workstation](local_llms.md#on-a-gpu-workstation) runs 100B-class models. |
 
@@ -112,8 +111,7 @@ If the data is sensitive, start with the local chapter instead.
 
 ## API key: read this first { #api-key-please-read-this-first }
 
-First rule of working with API providers: **never** put your API key in your script or Jupyter notebook.
-In other words, do **not** start your script with the following:
+**Never** put your API key in your script or Jupyter notebook. Do **not** start your script with the following:
 
 ```python
 from openai import OpenAI
@@ -139,7 +137,7 @@ client = OpenAI()
 The `openai` package reads the key from the `OPENAI_API_KEY` environment variable automatically.
 
 Alternatively, use the [`python-dotenv`](https://github.com/theskumar/python-dotenv) package to load the key from a `.env` file.
-Remember to add `.env` to your `.gitignore` file so it is never committed.
+Add `.env` to your `.gitignore` file so it is never committed.
 See [.env.template](https://github.com/yang3kc/llm_for_css/blob/main/.env.template) for an example.
 
 !!! tip "On Google Colab"
@@ -168,7 +166,7 @@ Pull requests are also welcome.
 
 ## Other resources
 
-Find this website useful? Check out my other repos:
+You may also find these repositories useful:
 
 - [daily_arxiv_digest](https://github.com/yang3kc/daily_arxiv_digest): Using ChatGPT to select interesting arXiv papers
 - [cursor_latex_template](https://github.com/yang3kc/cursor_latex_template): Cursor configuration for LaTeX projects
