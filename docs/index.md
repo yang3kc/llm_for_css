@@ -130,10 +130,14 @@ uv run script.py
 If you have questions or suggestions, please [open an issue](https://github.com/yang3kc/llm_for_css/issues).
 Pull requests are also welcome.
 
-## Other resources
+## About
 
-You may also find these repositories useful:
+Created by [Kaicheng Yang](https://www.kaichengyang.me/) with help from Claude Code.
 
-- [daily_arxiv_digest](https://github.com/yang3kc/daily_arxiv_digest): Using ChatGPT to select interesting arXiv papers
-- [cursor_latex_template](https://github.com/yang3kc/cursor_latex_template): Cursor configuration for LaTeX projects
-- [llm_git_commit](https://github.com/yang3kc/llm_git_commit): Command line tool to use LLM to generate git commit messages
+You may also find other tools from our lab useful:
+
+- [daily_arxiv_digest](https://github.com/yang3kc/daily_arxiv_digest): Using LLMs to select interesting arXiv papers
+- [LLM Domain Classification dashboard](https://yangkclab.github.io/llm_domain_classification/): Evaluate LLMs' ability to classify domains into different categories
+- [DomainDemo explorer](https://domaindemo.info/): Check user demographics of over 129,000 domains
+- [Scicolor Color Picker](https://yang3kc.github.io/scicolor/): A collection of color schemes for scientific visualization
+- [yanglabkit](https://github.com/YangKCLab/yanglabkit): A set of opinionated AI agent skills for research
