@@ -17,3 +17,16 @@
 .md-typeset .lead {
   font-size: 1.05rem;
 }
+
+/* Notebook pages: hide Jupyter's "In [n]:" / "Out[n]:" prompts so cells read like the markdown chapters. */
+.jupyter-wrapper .jp-Notebook .jp-Cell .jp-InputPrompt,
+.jupyter-wrapper .jp-Notebook .jp-Cell .jp-OutputPrompt {
+  display: none !important;
+}
+
+/* Notebook outputs: wrap long lines at word boundaries instead of mid-word. */
+.jupyter-wrapper .jp-Notebook .jp-OutputArea-output pre {
+  white-space: pre-wrap;
+  word-break: normal !important;
+  overflow-wrap: anywhere;
+}

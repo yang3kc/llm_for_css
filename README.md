@@ -37,7 +37,7 @@ Every notebook has an **Open in Colab** badge, so you can run it without install
    export OPENAI_API_KEY="<your OpenAI API key>"
    ```
 
-   or copy [`.env.template`](.env.template) to `.env` and fill it in (`.env` is git-ignored). The [API key section](https://yang3kc.github.io/llm_for_css/#api-key-please-read-this-first) on the website has the details, including how to do this on Colab.
+   or copy [`.env.template`](.env.template) to `.env` and fill it in (`.env` is git-ignored). The [API key section](https://yang3kc.github.io/llm_for_css/api_key/) on the website has the details, including how to do this on Colab.
 
 3. Run a script, for example:
 
