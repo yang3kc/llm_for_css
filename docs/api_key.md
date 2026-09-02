@@ -28,6 +28,7 @@ The `openai` package reads the key from the `OPENAI_API_KEY` environment variabl
 Alternatively, use the [`python-dotenv`](https://github.com/theskumar/python-dotenv) package to load the key from a `.env` file.
 Add `.env` to your `.gitignore` file so it is never committed.
 See [.env.template](https://github.com/yang3kc/llm_for_css/blob/main/.env.template) for an example.
+The tutorial notebooks call `load_dotenv()` at the top, so a `.env` file in the notebook's folder is picked up automatically.
 
 !!! tip "On Google Colab"
     Use Colab Secrets instead: click the key icon in the left sidebar, add a secret named `OPENAI_API_KEY`, and enable notebook access.

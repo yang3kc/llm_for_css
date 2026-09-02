@@ -58,7 +58,7 @@ extra_css:
 
 nav:
   - Home: index.md
-  - API key: api_key.md
+  - API key (read this first): api_key.md
   - OpenAI API:
       - Basics: basics.ipynb
       - Structured output: structured_output.ipynb
