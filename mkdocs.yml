@@ -63,7 +63,7 @@ nav:
       - Basics: basics.ipynb
       - Structured output: structured_output.ipynb
       - Async programming: async_programming.ipynb
-      - Batch processing: batch_processing.md
+      - Batch processing: batch_processing.ipynb
   - Other providers:
       - Anthropic API: anthropic.ipynb
       - Open-source models: open_source_models.ipynb
