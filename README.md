@@ -14,7 +14,7 @@ This repository holds its source: the notebooks and scripts, and the MkDocs conf
 | [Basics](https://yang3kc.github.io/llm_for_css/basics/): your first API call from Python | Notebook |
 | [Structured output](https://yang3kc.github.io/llm_for_css/structured_output/): answers as validated Python objects | Notebook |
 | [Async programming](https://yang3kc.github.io/llm_for_css/async_programming/): many requests at once | Notebook + template scripts |
-| [Batch processing](https://yang3kc.github.io/llm_for_css/batch_processing/): half price for large jobs | Notebook + script |
+| [Batch processing](https://yang3kc.github.io/llm_for_css/batch_processing/): half price for large jobs | Notebook |
 | [Anthropic API](https://yang3kc.github.io/llm_for_css/anthropic/): Claude models | Notebook |
 | [Open-source models](https://yang3kc.github.io/llm_for_css/open_source_models/): open-weight models through OpenRouter | Notebook |
 | [Local LLMs](https://yang3kc.github.io/llm_for_css/local_llms/): run a model on your own computer with Ollama | Scripts |

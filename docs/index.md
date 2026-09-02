@@ -56,7 +56,7 @@ Read the [API key](api_key.md) page first, then go through the OpenAI chapters i
 
     Upload all your prompts in one file and pay half price for large jobs.
 
-    [:octicons-arrow-right-24: Batch processing](batch_processing.md)
+    [:octicons-arrow-right-24: Batch processing](batch_processing.ipynb)
 
 </div>
 
@@ -101,7 +101,7 @@ Prices are per 1M tokens (input / output) for the example model each chapter use
 
 | Provider | Example model | Price per 1M tokens | Setup | Pick it when |
 |---|---|---|---|---|
-| [OpenAI](basics.ipynb) | `gpt-5.6-luna` | $0.20 / $1.20 | One account and key | You are starting out and want the most capable ecosystem, the best documentation, or a [batch API](batch_processing.md) that halves the price for large jobs. |
+| [OpenAI](basics.ipynb) | `gpt-5.6-luna` | $0.20 / $1.20 | One account and key | You are starting out and want the most capable ecosystem, the best documentation, or a [batch API](batch_processing.ipynb) that halves the price for large jobs. |
 | [Anthropic](anthropic.ipynb) | `claude-haiku-4-5` | $1 / $5 | One account and key | You want a second model family to check robustness, Claude works better on your task, or you want a 50% batch discount. |
 | [Open-source models via OpenRouter](open_source_models.ipynb) | `deepseek/deepseek-v4-flash` | $0.08 / $0.15 | One account and key | You want the lowest per-token cost, access to many open-weight models through one key, or a model you can name exactly in a paper. |
 | [Local with Ollama](local_llms.md) | `gemma4:e2b` | Free | Install Ollama, download a 7 GB model | Your data cannot leave your machine, or you need to rerun the same model years later. Slower and less capable than the hosted options on a laptop; a [GPU workstation](local_llms.md#on-a-gpu-workstation) runs 100B-class models. |
