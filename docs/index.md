@@ -7,6 +7,12 @@ Guidance, recommendations, and runnable examples for using LLM APIs in computati
 Using LLMs for research can be as simple as asking the models questions through a chat box.
 Things become tricky when you want to process tens of thousands of text messages programmatically: keeping keys safe, getting output you can parse, running queries in parallel, and controlling cost.
 This website walks through each of those steps.
+
+!!! note "What this site does not cover"
+    This is a technical guide to interacting with LLMs from code.
+    It does not explain how LLMs work, and it is not about AI agents.
+    It also does not cover the methodological side of using LLMs in research, such as validating model output against human labels or reporting results.
+    Those questions matter, but they belong elsewhere.
 The core chapters use OpenAI's API.
 The later chapters show the same patterns with Anthropic, hosted open-source models, and models running on your own computer.
 
