@@ -98,7 +98,7 @@ Prices are per 1M tokens (input / output) for the example model each chapter use
 | [OpenAI](basics.ipynb) | `gpt-5.6-luna` | $0.20 / $1.20 | One account and key | You are starting out. Most capable ecosystem, best documentation, and the [batch API](batch_processing.md) halves the price for large jobs. |
 | [Anthropic](anthropic.ipynb) | `claude-haiku-4-5` | $1 / $5 | One account and key | You want a second model family to check robustness, or Claude works better on your task. Also has a 50% batch discount. |
 | [Open-source models via OpenRouter](open_source_models.ipynb) | `deepseek/deepseek-v4-flash` | $0.08 / $0.15 | One account and key | You want the lowest per-token cost, access to many open-weight models through one key, or a model you can name exactly in a paper. |
-| [Local with Ollama](local_llms.md) | `gemma4:e2b` | Free | Install Ollama, download a 7 GB model | Your data cannot leave your machine, or you need to rerun the same model years later. Slower and less capable than the hosted options. |
+| [Local with Ollama](local_llms.md) | `gemma4:e2b` | Free | Install Ollama, download a 7 GB model | Your data cannot leave your machine, or you need to rerun the same model years later. Slower and less capable than the hosted options on a laptop; a [GPU workstation](local_llms.md#on-a-gpu-workstation) runs 100B-class models. |
 
 A practical default: prototype the prompt on a few hundred examples with OpenAI, then decide.
 If the task is easy for the model, switch to the cheapest option that still passes your validation set.
