@@ -7,28 +7,6 @@ Runnable guidance and examples for using LLM APIs in computational social scienc
 The website is the canonical version of the tutorial.
 This repository holds its source: the notebooks and scripts, and the MkDocs configuration that builds the site.
 
-> **What this tutorial does not cover.** This is a technical guide to interacting with LLMs from code.
-> It does not explain how LLMs work, and it is not about AI agents.
-> It also does not cover methodological questions such as validating model output against human labels or reporting results.
-
-## What is covered
-
-| Chapter | Format |
-|---|---|
-| [API key](https://yang3kc.github.io/llm_for_css/api_key/): read this first | Page |
-| [Basics](https://yang3kc.github.io/llm_for_css/basics/): your first API call from Python | Notebook |
-| [Structured output](https://yang3kc.github.io/llm_for_css/structured_output/): answers as validated Python objects | Notebook |
-| [Async programming](https://yang3kc.github.io/llm_for_css/async_programming/): many requests at once so a large dataset takes minutes, not hours | Notebook + template scripts |
-| [Batch processing](https://yang3kc.github.io/llm_for_css/batch_processing/): upload all your prompts in one file and pay half price for large jobs | Notebook |
-| [Anthropic API](https://yang3kc.github.io/llm_for_css/anthropic/): Claude models | Notebook |
-| [Open-source models](https://yang3kc.github.io/llm_for_css/open_source_models/): open-weight models through OpenRouter | Notebook |
-| [Local LLMs](https://yang3kc.github.io/llm_for_css/local_llms/): run a model on your own computer with Ollama, no key and no per-token cost | Page + scripts |
-
-The core chapters use OpenAI's API; the later chapters show the same patterns with Anthropic, hosted open-source models, and local models.
-Not sure where to start? See [Which provider should I use?](https://yang3kc.github.io/llm_for_css/#which-provider-should-i-use) on the website.
-
-Every notebook has an **Open in Colab** badge, so you can run it without installing anything.
-
 ## Running the code locally
 
 1. Clone the repository and install the dependencies with [uv](https://docs.astral.sh/uv/getting-started/installation/):
