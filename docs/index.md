@@ -12,6 +12,7 @@ This website walks through each of those steps.
     This is a technical guide to interacting with LLMs from code.
     It does not explain how LLMs work, and it is not about AI agents.
     It also does not cover methodological questions such as validating model output against human labels or reporting results.
+
 The core chapters use OpenAI's API.
 The later chapters show the same patterns with Anthropic, hosted open-source models, and models running on your own computer.
 
