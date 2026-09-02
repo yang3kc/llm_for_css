@@ -52,8 +52,9 @@ The site is deployed to GitHub Pages by a GitHub Actions workflow on every push 
 
 ## Versions
 
-- **v2.0 (current):** Responses API, structured output via the text format method, dependencies managed with uv, notebooks as the canonical format, and chapters for Anthropic, open-source models, and local LLMs.
-- **v1.0:** Chat Completions API. Still available on the [v1.0 branch](https://github.com/yang3kc/llm_for_css/tree/v1.0).
+- **v3.0 (current):** The tutorial became a website. Every runnable chapter is a Jupyter notebook with an Open in Colab badge, the OpenAI content is updated to the GPT-5.6 models, and there are new chapters for the Anthropic API, open-source models via OpenRouter, and local LLMs with Ollama (laptop and GPU workstation).
+- **v2.0:** Responses API, structured output via the text format method, dependencies managed with uv. Available at the [v2.0 tag](https://github.com/yang3kc/llm_for_css/tree/v2.0).
+- **v1.0:** Chat Completions API. Available at the [v1.0 tag](https://github.com/yang3kc/llm_for_css/tree/v1.0).
 
 ## Questions and contributions
 
