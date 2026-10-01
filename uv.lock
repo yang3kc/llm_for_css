@@ -732,7 +732,7 @@ wheels = [
 
 [[package]]
 name = "llm-for-css"
-version = "0.1.0"
+version = "3.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "anthropic" },
