@@ -1,0 +1,60 @@
+{"id": "msg_01", "text": "The service here is very good!", "label": "positive", "kind": "clear"}
+{"id": "msg_02", "text": "We arrived at 7 and left at 9.", "label": "neutral", "kind": "clear"}
+{"id": "msg_03", "text": "Oh great, another 40-minute wait for a cold coffee.", "label": "negative", "kind": "ambiguous"}
+{"id": "msg_04", "text": "My order arrived two days late and the box was crushed.", "label": "negative", "kind": "clear"}
+{"id": "msg_05", "text": "The food was great, but we waited an hour for a table.", "label": "neutral", "kind": "ambiguous"}
+{"id": "msg_06", "text": "The waiter ignored us for half an hour and then got our order wrong.", "label": "negative", "kind": "clear"}
+{"id": "msg_07", "text": "I exchanged the shoes for a different size.", "label": "neutral", "kind": "clear"}
+{"id": "msg_08", "text": "The help desk fixed my login problem in five minutes. Thank you!", "label": "positive", "kind": "clear"}
+{"id": "msg_09", "text": "Why does it take three weeks to answer one email?", "label": "negative", "kind": "ambiguous"}
+{"id": "msg_10", "text": "Thanks a lot for delivering my package to the wrong address again.", "label": "negative", "kind": "ambiguous"}
+{"id": "msg_11", "text": "I called the help desk to reset my password.", "label": "neutral", "kind": "clear"}
+{"id": "msg_12", "text": "Terrible experience. The driver left my food outside in the rain.", "label": "negative", "kind": "clear"}
+{"id": "msg_13", "text": "The repair was fine, I guess.", "label": "neutral", "kind": "ambiguous"}
+{"id": "msg_14", "text": "The delivery came a day early and everything was packed carefully.", "label": "positive", "kind": "clear"}
+{"id": "msg_15", "text": "Is it normal for a refund to take ten days?", "label": "neutral", "kind": "ambiguous"}
+{"id": "msg_16", "text": "The soup was cold and the staff did not care when I told them.", "label": "negative", "kind": "clear"}
+{"id": "msg_17", "text": "I can't say anything bad about the delivery team.", "label": "positive", "kind": "ambiguous"}
+{"id": "msg_18", "text": "I waited 50 minutes at the bank and the teller was rude to me.", "label": "negative", "kind": "clear"}
+{"id": "msg_19", "text": "The shop sold me a broken blender and refused to give a refund.", "label": "negative", "kind": "clear"}
+{"id": "msg_20", "text": "The new checkout system is not bad at all.", "label": "positive", "kind": "ambiguous"}
+{"id": "msg_21", "text": "The pharmacist explained everything clearly and was very kind.", "label": "positive", "kind": "clear"}
+{"id": "msg_22", "text": "The repair shop charged me twice and my phone still does not work.", "label": "negative", "kind": "clear"}
+{"id": "msg_23", "text": "The checkout line was slow, but the staff were wonderful and I will be back.", "label": "positive", "kind": "ambiguous"}
+{"id": "msg_24", "text": "The food was awful and overpriced. We will not come back.", "label": "negative", "kind": "clear"}
+{"id": "msg_25", "text": "Worst customer service I have ever had.", "label": "negative", "kind": "clear"}
+{"id": "msg_26", "text": "My ticket number is 4821 and I submitted it on Monday.", "label": "neutral", "kind": "clear"}
+{"id": "msg_27", "text": "The sunset was beautiful, but the staff at the beach cafe were slow and rude.", "label": "negative", "kind": "ambiguous"}
+{"id": "msg_28", "text": "Excellent pizza and a friendly driver. Five stars.", "label": "positive", "kind": "clear"}
+{"id": "msg_29", "text": "The restaurant has a second location near the train station.", "label": "neutral", "kind": "clear"}
+{"id": "msg_30", "text": "I love my new phone. I used it to book a table with you for Friday.", "label": "neutral", "kind": "ambiguous"}
+{"id": "msg_31", "text": "I would not call this the friendliest shop in town.", "label": "negative", "kind": "ambiguous"}
+{"id": "msg_32", "text": "Is anyone at this counter going to take my order today?", "label": "negative", "kind": "ambiguous"}
+{"id": "msg_33", "text": "My package is scheduled for delivery on Thursday.", "label": "neutral", "kind": "clear"}
+{"id": "msg_34", "text": "I ordered two coffees and a sandwich at the counter.", "label": "neutral", "kind": "clear"}
+{"id": "msg_35", "text": "The support agent hung up on me twice. This is unacceptable.", "label": "negative", "kind": "clear"}
+{"id": "msg_36", "text": "Wonderful, the help desk closed my ticket without fixing anything.", "label": "negative", "kind": "ambiguous"}
+{"id": "msg_37", "text": "We booked a table for six people at noon.", "label": "neutral", "kind": "clear"}
+{"id": "msg_38", "text": "The help desk reply was a little disappointing, to be honest.", "label": "negative", "kind": "ambiguous"}
+{"id": "msg_39", "text": "The weather was terrible on the day we visited the cafe.", "label": "neutral", "kind": "ambiguous"}
+{"id": "msg_40", "text": "Rude staff and dirty tables. I do not recommend this place.", "label": "negative", "kind": "clear"}
+{"id": "msg_41", "text": "The driver was polite, but half my order was missing and nobody answered the phone.", "label": "negative", "kind": "ambiguous"}
+{"id": "msg_42", "text": "The cashier was patient and helped me find everything on my list.", "label": "positive", "kind": "clear"}
+{"id": "msg_43", "text": "I just love being on hold for an hour to hear that nobody can help me.", "label": "negative", "kind": "ambiguous"}
+{"id": "msg_44", "text": "The help desk never replied to my ticket. Very disappointing.", "label": "negative", "kind": "clear"}
+{"id": "msg_45", "text": "The delivery driver rang the doorbell and left the box at the door.", "label": "neutral", "kind": "clear"}
+{"id": "msg_46", "text": "Best haircut I have had in years, and the staff were so kind.", "label": "positive", "kind": "clear"}
+{"id": "msg_47", "text": "How many times do I have to send the same form before someone reads it?", "label": "negative", "kind": "ambiguous"}
+{"id": "msg_48", "text": "Fast shipping and an easy return. I will order from this shop again.", "label": "positive", "kind": "clear"}
+{"id": "msg_49", "text": "The new menu is pretty decent, I suppose.", "label": "positive", "kind": "ambiguous"}
+{"id": "msg_50", "text": "The pharmacy moved to the other side of the street last month.", "label": "neutral", "kind": "clear"}
+{"id": "msg_51", "text": "I am very happy with the repair. My laptop works like new.", "label": "positive", "kind": "clear"}
+{"id": "msg_52", "text": "The rain ruined our walk, but the cafe staff found us a warm table right away.", "label": "positive", "kind": "ambiguous"}
+{"id": "msg_53", "text": "The service here is ok.", "label": "neutral", "kind": "ambiguous"}
+{"id": "msg_54", "text": "The store opens at 9 am on weekdays.", "label": "neutral", "kind": "clear"}
+{"id": "msg_55", "text": "The hotel front desk upgraded our room and made us feel welcome.", "label": "positive", "kind": "clear"}
+{"id": "msg_56", "text": "The service here is not very good.", "label": "negative", "kind": "ambiguous"}
+{"id": "msg_57", "text": "I asked the support agent to send the invoice by email.", "label": "neutral", "kind": "clear"}
+{"id": "msg_58", "text": "Great customer support. They answered my question right away.", "label": "positive", "kind": "clear"}
+{"id": "msg_59", "text": "Our waiter was friendly and the food came out fast.", "label": "positive", "kind": "clear"}
+{"id": "msg_60", "text": "Nice staff, bad coffee.", "label": "neutral", "kind": "ambiguous"}

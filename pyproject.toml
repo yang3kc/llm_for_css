@@ -9,6 +9,7 @@ dependencies = [
     "openai>=1.78.1",
     "python-dotenv>=1.2.3",
     "tqdm>=4.67.1",
+    "typesafe-sdk>=0.7.2",
 ]
 
 [dependency-groups]

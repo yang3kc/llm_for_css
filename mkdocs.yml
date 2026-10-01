@@ -68,6 +68,8 @@ nav:
       - Anthropic API: anthropic.ipynb
       - Open-source models: open_source_models.ipynb
       - Local LLMs: local_llms.md
+  - Decision models:
+      - Decision models (Jev): jev.ipynb
 
 plugins:
   - search
