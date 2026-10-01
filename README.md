@@ -35,7 +35,7 @@ This repository holds its source: the notebooks and scripts, and the MkDocs conf
 
 | Path | Contents |
 |---|---|
-| `docs/` | The website pages: the notebooks (`*.ipynb`), the markdown pages, and the batch example's `.jsonl` files |
+| `docs/` | The website pages: the notebooks (`*.ipynb`), the markdown pages, and the `.jsonl` data files of the batch processing and decision models chapters |
 | `async_programming/`, `batch_processing/`, `local_llms/` | Scripts that the chapters embed or link to |
 | `basics/`, `structured_output/` | Pointer READMEs kept for old links; the content moved to notebooks in `docs/` |
 | `mkdocs.yml` | Site configuration (Material for MkDocs) |
@@ -52,6 +52,7 @@ The site is deployed to GitHub Pages by a GitHub Actions workflow on every push 
 
 ## Versions
 
+- **Since v3.0:** A new chapter on decision models, with Jev as the example.
 - **v3.0 (current):** The tutorial became a website. Every runnable chapter is a Jupyter notebook with an Open in Colab badge, the OpenAI content is updated to the GPT-5.6 models, and there are new chapters for the Anthropic API, open-source models via OpenRouter, and local LLMs with Ollama (laptop and GPU workstation).
 - **v2.0:** Responses API, structured output via the text format method, dependencies managed with uv. Available at the [v2.0 tag](https://github.com/yang3kc/llm_for_css/tree/v2.0).
 - **v1.0:** Chat Completions API. Available at the [v1.0 tag](https://github.com/yang3kc/llm_for_css/tree/v1.0).

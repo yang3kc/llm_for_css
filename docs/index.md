@@ -15,6 +15,7 @@ This website walks through each of those steps.
 
 The core chapters use OpenAI's API.
 The later chapters show the same patterns with Anthropic, hosted open-source models, and models running on your own computer.
+The last chapter covers decision models, which pick an answer from a fixed set of options instead of writing text.
 
 Most chapters are runnable Jupyter notebooks.
 Use the **Open in Colab** badge at the top of a page to try the code without installing anything.
@@ -94,9 +95,27 @@ Each chapter covers setup, a basic query, and structured output.
 
 </div>
 
+## Decision models
+
+A decision model is not an LLM.
+You give it a text and a question with a fixed set of answers, and it returns one answer together with a probability for each possible answer.
+The chapter uses Jev, which has its own Python package, so the code from the earlier chapters does not carry over.
+
+<div class="grid cards" markdown>
+
+-   :material-format-list-checks:{ .lg .middle } **Decision models (Jev)**
+
+    ---
+
+    Label text with Jev, a hosted decision model: typed questions, a confidence value for each label, and a cascade that sends the uncertain items to an LLM.
+
+    [:octicons-arrow-right-24: Decision models (Jev)](jev.ipynb)
+
+</div>
+
 ## Which provider should I use?
 
-The tutorial covers four ways to reach a model.
+The tutorial covers four ways to reach an LLM.
 The code is nearly the same for all of them. The `openai` Python package works with every provider except Anthropic, whose package has a similar interface.
 Prices are per 1M tokens (input / output) for the example model each chapter uses, as of September 2026; check the provider's pricing page before a large run.
 
@@ -110,6 +129,11 @@ Prices are per 1M tokens (input / output) for the example model each chapter use
 A practical default: prototype the prompt on a few hundred examples with OpenAI, then decide.
 If the task is easy for the model, switch to the cheapest option that still passes your validation set.
 If the data is sensitive, start with the local chapter instead.
+
+[Jev](jev.ipynb) is not in the table because it is a decision model, not an LLM, and it needs its own Python package.
+It costs $0.042 per 1M input tokens, and output tokens are free, as of October 2026.
+Consider it when your task is to label text with a fixed set of answers and a low cost matters more to you than the highest accuracy.
+The chapter lists the cases where you should [use an LLM instead](jev.ipynb#when-to-use-an-llm-instead).
 
 ## Dependencies
 
