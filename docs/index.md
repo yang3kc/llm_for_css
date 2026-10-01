@@ -133,7 +133,7 @@ If the data is sensitive, start with the local chapter instead.
 [Jev](jev.ipynb) is not in the table because it is a decision model, not an LLM, and it needs its own Python package.
 It costs $0.042 per 1M input tokens, and output tokens are free, as of October 2026.
 Consider it when your task is to label text with a fixed set of answers and a low cost matters more to you than the highest accuracy.
-The chapter lists the cases where you should [use an LLM instead](jev.ipynb#when-to-use-an-llm-instead).
+The chapter compares the cases where Jev is a good fit with the cases where you should [use an LLM instead](jev.ipynb#jev-or-an-llm).
 
 ## Dependencies
 
